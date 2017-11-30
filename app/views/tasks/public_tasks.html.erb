@@ -1,6 +1,11 @@
 <h3>Public Tasks</h3>
 </br>
-<%= render partial: "task", collection: @tasks, as: :task %>
+<% if @tasks.present? %>
+  <%= render partial: "task", collection: @tasks, as: :task %>
+<% else %>
+  <h3> Sorry ! currently there are no tasks created in system. Please create a task.</h3>
+<% end %>
+
 </br >
 <% if user_signed_in? %>
   <%= button_to 'Back', tasks_path, class: "btn btn-primary", method: :get %>
