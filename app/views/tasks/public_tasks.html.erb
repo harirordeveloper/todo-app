@@ -1,0 +1,7 @@
+<h3>Public Tasks</h3>
+</br>
+<%= render partial: "task", collection: @tasks, as: :task %>
+</br >
+<% if user_signed_in? %>
+  <%= button_to 'Back', tasks_path, class: "btn btn-primary", method: :get %>
+<% end %>

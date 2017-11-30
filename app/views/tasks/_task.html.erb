@@ -1,0 +1,15 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-sm-8">
+        <p>Title : <%= task.title %></p>
+        <p>Dead Line : <%= pretty_time(task.deadline) %></p>
+        <p>Description : <%= task.description %></p>
+      </div>
+      <div class="col-sm-4">
+        <p>Posted <%= time_ago_in_words(task.created_at) %> ago</p>
+        <%= task.private ?  "Private" : "Public" %> Task
+      </div>
+    </div>
+  </div>
+</div>
