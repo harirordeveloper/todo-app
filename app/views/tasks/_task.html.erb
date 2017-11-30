@@ -8,7 +8,11 @@
       </div>
       <div class="col-sm-4">
         <p>Posted <%= time_ago_in_words(task.created_at) %> ago</p>
-        <%= task.private ?  "Private" : "Public" %> Task
+        <p><%= task.private ?  "Private" : "Public" %> Task </p>
+        <% if owner?(task) %>
+          <p><%= link_to 'Delete post', task, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+          <p><%= link_to 'Edit', edit_task_path(task)%></p>
+        <% end %>
       </div>
     </div>
   </div>
