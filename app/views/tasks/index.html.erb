@@ -11,5 +11,5 @@
 <% if @tasks.present? %>
   <%= render partial: "task", collection: @tasks, as: :task %>
 <% else %>
-  <h3> Sorry ! currently there are no tasks created by you. Please create a task.</h3>
+  <h3> Sorry ! currently there are no tasks created by you. <%= link_to 'Please create a task', new_task_path, class: "btn-link" %>.</h3>
 <% end %>
